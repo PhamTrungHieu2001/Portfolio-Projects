@@ -40,7 +40,7 @@ with
 	)
 -- Get the return rate of a product = (total_return / total_order) * 100%
 select po.product_key,  
-cast((cast(ISNULL(total_return, 0) as float) * 100 / total_order) as decimal(5,2)) return_rate 
+(cast(ISNULL(total_return, 0) as float) * 100 / total_order) return_rate 
 from ProductOrder po left join ProductReturn pr 
 on po.product_key = pr.ProductKey
 ;
